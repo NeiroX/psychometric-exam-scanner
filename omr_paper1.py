@@ -71,6 +71,7 @@ for c in cnts:
     # bounding box to derive the aspect ratio
     (x, y, w, h) = cv2.boundingRect(c)
     ar = w / float(h)
+    print(c)
 
     # in order to label the contour as a question, region
     # should be sufficiently wide, sufficiently tall, and
@@ -80,6 +81,7 @@ for c in cnts:
 
 # sort the question contours top-to-bottom, then initialize
 # the total number of correct answers
+print(questionCnts)
 questionCnts = contours.sort_contours(questionCnts,
                                       method="top-to-bottom")[0]
 correct = 0
